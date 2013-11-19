@@ -1,0 +1,45 @@
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+
+    alias tree='tree -C'
+fi
+
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias lt='ls -lt'
+alias psg='ps aux | grep -i'
+alias cd..='cd ..'
+
+alias hh='hg st'
+alias dd='hg diff'
+alias cc='hg ci -m '
+alias mm='hg merge && hg ci -m "merged" && echo "merge committed"'
+alias rr='hg res -m && hg ci -m "resolved" && echo "resolve committed"'
+alias pp='hg pull -u'
+alias gg='hg push'
+alias oo='hg log -M -l'
+alias openres="hg res -l | grep -E '^U' | cut -d ' ' -f 2 | xargs subl"
+alias check_prints='hg diff | grep -E "^\+\s*print"'
+alias check_logs='hg diff | grep -E "^\+\s*console\.log"'
+
+alias ds='python manage.py shell'
+alias rs='python manage.py runserver 0.0.0.0:8080'
+
+alias rm_pyc='sudo touch __temp__.pyc && sudo find . -name "*.pyc" | sudo xargs rm'
+alias rm_orig='sudo touch __temp__.orig && sudo find . -name "*.orig" | sudo xargs rm'
+alias rdiff='diff -r -x ".hg" -x "*.pyc" -x "*.orig" -x "*.pg_dump" -x "index" -x "*compiled*" -x "*_jst.js"'
+
+alias localmail='sudo python -m smtpd -n -c DebuggingServer localhost:25'
+
+alias biggest_files='find . -type f \( ! -regex ".*/\..*" ! -regex ".*\.\(pyc\|orig\|pg_dump\|docx\|pdf\|ttf\|eot\)$" \) | xargs -I fi wc -l "fi" | sort -n'

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+selection="$1"
+monitors=`xrandr -d :0 -q | grep ' connected' | wc -l`
+if [[ "$selection" == "2" || ( -z "$selection" && "$monitors" == "2" ) ]]; then
+    echo 'laptop + monitor'
+    xrandr -d :0 --output eDP1 --auto --pos 0x540 --output DP1 --auto --pos 1440x0
+elif [[ "$selection" == "1" ]]; then
+    echo 'just monitor'
+    xrandr -d :0 --output eDP1 --off --output DP1 --auto
+else
+    echo 'just laptop'
+    xrandr -d :0 --output eDP1 --auto --output DP1 --off
+fi
+
+eval $(cat ~/.fehbg)

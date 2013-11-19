@@ -1,0 +1,6 @@
+\pset null 'NULL'
+\set HISTFILE ~/.psql_history- :DBNAME
+\set HISTSIZE 1000000
+\timing
+\set PROMPT1 '%~@%m%R$ '
+\set PROMPT2 '> '

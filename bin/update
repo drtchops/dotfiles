@@ -1,0 +1,19 @@
+#!/bin/sh
+
+sudo date
+echo
+echo "----- Update -----"
+echo
+sudo apt-get update
+echo
+echo "----- Upgrade -----"
+echo
+sudo apt-get upgrade
+echo
+echo "----- Dist-Upgrade -----"
+echo
+sudo apt-get dist-upgrade
+echo
+echo "----- Done -----"
+echo
+

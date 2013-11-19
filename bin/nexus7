@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ "$1" == "mount" ]; then
+	echo "sudo mtpfs -o allow_other /media/Nexus7"
+	sudo mtpfs -o allow_other /media/Nexus7
+else
+	echo "sudo umount mtpfs"
+	sudo umount mtpfs
+fi

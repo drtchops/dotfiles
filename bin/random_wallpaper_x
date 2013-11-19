@@ -1,0 +1,6 @@
+#!/bin/sh
+
+DIR=/home/ian/Dropbox/Photos/Wallpapers
+WALLPAPER="`find ${DIR} -type f \( ! -iname ".*" \) | shuf -n1)`"
+echo $WALLPAPER
+DISPLAY=:0.0 feh --bg-max "${WALLPAPER}"
