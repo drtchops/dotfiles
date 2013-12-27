@@ -1,3 +1,8 @@
+# Project Specific #
+####################
+# Add any project specific files here
+# Also remove any below entries that may conflict with your current project
+
 # Compiled source #
 ###################
 *.pyc
