@@ -12,6 +12,8 @@
 *.exe
 *.o
 *.so
+*.swp
+*.tmp
 build/*
 
 # Packages #
