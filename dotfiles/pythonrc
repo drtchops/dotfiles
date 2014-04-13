@@ -27,11 +27,14 @@ atexit.register(save_history)
 readline.parse_and_bind('tab: complete')
 
 # cleanup
-del os, atexit, readline, rlcompleter, save_history, historyPath
+del os
+del atexit
+del readline
+del rlcompleter
+del save_history
+del historyPath
 
-try:
-    from datetime import date
-    from datetime import datetime
-    from datetime import timedelta
-except:
-    pass
+# convenience;
+from datetime import date
+from datetime import datetime
+from datetime import timedelta

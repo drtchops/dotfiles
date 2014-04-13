@@ -5,7 +5,8 @@
 
 # Compiled source #
 ###################
-*.pyc
+*.py[co]
+__pycache__
 *.com
 *.class
 *.dll
@@ -15,6 +16,7 @@
 *.swp
 *.tmp
 build/*
+dist/*
 
 # Packages #
 ############
@@ -38,6 +40,8 @@ build/*
 *sublime*
 .project
 .pydevproject
+.coverage
+MANIFEST
 
 # Logs and databases #
 ######################
@@ -58,3 +62,11 @@ build/*
 ehthumbs.db
 Thumbs.db
 desktop.ini
+
+# Coverage #
+###########
+coverage/*
+
+# Ctags #
+#########
+tags
