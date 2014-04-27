@@ -1,0 +1,9 @@
+ping -c 4 www.google.ca
+lspci
+lsmod
+ifconfig
+dmesg | tail -n 15
+cat /var/log/syslog
+traceroute -m 254 -q1 obiwan.scrye.net
+# telnet towel.blinkenlights.nl
+# \sl
