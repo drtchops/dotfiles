@@ -1,0 +1,13 @@
+\edit-mode emacs
+
+\bind [1;5C forward-word
+\bind [1;5D backward-word
+\bind OH beginning-of-line
+\bind OF end-of-line
+
+\pset null 'NULL'
+\set HISTFILE ~/.vsql_history- :DBNAME
+\set HISTSIZE 1000000
+\timing
+\set PROMPT1 '%~@%m%R$ '
+\set PROMPT2 '> '

@@ -10,6 +10,7 @@ import rlcompleter
 # where is history saved
 historyPath = os.path.expanduser('~/.pyhistory')
 
+
 # handler for saving history
 def save_history(historyPath=historyPath):
     import readline
@@ -34,7 +35,26 @@ del rlcompleter
 del save_history
 del historyPath
 
-# convenience;
+# for convenience
+import os
+import sys
 from datetime import date
 from datetime import datetime
 from datetime import timedelta
+
+
+def punify(text, pun='pun', min_length=3, probability=0.5):
+    ''' Makes text much more punny '''
+    import random
+    pun_length = len(pun)
+    min_length = min(min_length, pun_length + 1)
+    lines = []
+    for line in text.splitlines():
+        words = []
+        for word in line.split():
+            if len(word) > min_length and random.random() < probability:
+                index = random.randint(0, len(word) - pun_length)
+                word = word[:index] + pun + word[index + pun_length:]
+            words.append(word)
+        lines.append(' '.join(words))
+    return '\n'.join(lines)

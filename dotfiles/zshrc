@@ -1,0 +1,26 @@
+ZSH=$HOME/.oh-my-zsh
+ZSH_THEME="ian"
+CASE_SENSITIVE="true"
+plugins=(command-not-found themes mercurial git git-flow python pep8 pip django fabric lol extract vagrant heroku nyan)
+source $ZSH/oh-my-zsh.sh
+
+setopt interactivecomments
+setopt nonomatch
+
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
+fi
+
+# export PYTHONSTARTUP=/etc/pythonrc
+export DEBFULLNAME="Ian Robinson"
+export DEBEMAIL="ianronrobinson@gmail.com"
+export WORKON_HOME=$HOME/.envs
+export EDITOR='vim'
+
+diff_develop() {
+    for b in $(git branch --remote --no-color --no-column --list 'origin/feature/*'); do
+        echo $b
+        git ls --no-merges origin/develop..$b
+        echo '\n'
+    done
+}

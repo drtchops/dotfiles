@@ -31,42 +31,31 @@
 !!!!!!!!! urxvt
 
 !! looks
-URxvt*font: -*-terminus-medium-r-normal-*-*-140-*-*-*-*-iso8859-1
-URxvt*boldFont: -*-terminus-medium-r-normal-*-*-140-*-*-*-*-iso8859-1
-URxvt*depth: 32
-URxvt*scrollBar: false
-URxvt*scrollstyle: plain
-URxvt*transparent: true
-URxvt*shading: 15
-URxvt*fading: 15
+URxvt.font: -*-terminus-medium-r-normal-*-*-140-*-*-*-*-iso8859-1
+URxvt.boldFont: -*-terminus-medium-r-normal-*-*-140-*-*-*-*-iso8859-1
+URxvt.depth: 32
+URxvt.scrollBar: false
+URxvt.scrollstyle: plain
+URxvt.transparent: true
+URxvt.shading: 15
+URxvt.fading: 15
 
 !! functionality
-URxvt*termName: xterm-256color
-URxvt*loginShell: true
-URxvt*scrollTtyOutput: false
-URxvt*scrollWithBuffer: true
-URxvt*scrollTtyKeypress: true
-URxvt*saveLines: 100000
-URxvt*iso14755: false
+URxvt.termName: xterm-256color
+URxvt.loginShell: true
+URxvt.scrollTtyOutput: false
+URxvt.scrollWithBuffer: true
+URxvt.scrollTtyKeypress: true
+URxvt.saveLines: 100000
+URxvt.iso14755: false
 
 !! plugins
-URxvt*perl-ext-common: default,clipboard
-!! URxvt*keysym.4-c: perl:clipboard:copy
-!! URxvt*keysym.4-v: perl:clipboard:paste
-URxvt*keysym.C-C: perl:clipboard:copy
-URxvt*keysym.C-V: perl:clipboard:paste
-URxvt*keysym.Control-Up: \033[1;5A
-URxvt*keysym.Control-Down: \033[1;5B
-URxvt*keysym.Control-Left: \033[1;5D
-URxvt*keysym.Control-Right: \033[1;5C
-
-
-!!!!!!!!! xterm
-
-! XTerm*termName: xterm-256color
-XTerm*local: true
-XTerm*loginShell: true
-XTerm*font: terminus-12
-XTerm*boldMode: false
-XTerm*saveLines: 100000
-XTerm*selectToClipboard: true
+URxvt.perl-ext-common: default,clipboard,keyboard-select
+URxvt.keysym.C-C: perl:clipboard:copy
+URxvt.keysym.C-V: perl:clipboard:paste
+URxvt.keysym.C-S: perl:keyboard-select:activate
+URxvt.keysym.C-s: perl:keyboard-select:search
+URxvt.keysym.Control-Up: \033[1;5A
+URxvt.keysym.Control-Down: \033[1;5B
+URxvt.keysym.Control-Left: \033[1;5D
+URxvt.keysym.Control-Right: \033[1;5C
