@@ -1,16 +1,23 @@
 #!/bin/bash
 
+root=/home/ian
+log=$root/hotplug.log
+
+export DISPLAY=":0.0"
+export XAUTHORITY=$root/.Xauthority
+
 selection="$1"
-monitors=`xrandr -d :0 -q | grep ' connected' | wc -l`
+monitors=$(/usr/bin/xrandr -d :0 -q | grep ' connected' | wc -l)
+
 if [[ "$selection" == "2" || ( -z "$selection" && "$monitors" == "2" ) ]]; then
-    echo 'laptop + monitor'
-    xrandr -d :0 --output eDP1 --auto --pos 0x540 --output DP1 --auto --pos 1440x0
+    echo 'laptop + monitor' >> $log
+    /usr/bin/xrandr -d :0 --output eDP1 --auto --pos 0x540 --output DP1 --auto --pos 1440x0 &>> $log
 elif [[ "$selection" == "1" ]]; then
-    echo 'just monitor'
-    xrandr -d :0 --output eDP1 --off --output DP1 --auto
+    echo 'just monitor' >> $log
+    /usr/bin/xrandr -d :0 --output eDP1 --off --output DP1 --auto &>> $log
 else
-    echo 'just laptop'
-    xrandr -d :0 --output eDP1 --auto --output DP1 --off
+    echo 'just laptop' >> $log
+    /usr/bin/xrandr -d :0 --output eDP1 --auto --output DP1 --off &>> $log
 fi
 
-eval $(cat ~/.fehbg)
+eval $(cat $root/.fehbg) &>> $log

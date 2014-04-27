@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo "Why would you ever want to stop this?"
+while true; do
+    $HOME/bin/xrandr-invert-colors.bin
+    # sleep $((RANDOM%1)).$((RANDOM%10))
+    sleep 0.$((RANDOM%10))
+done

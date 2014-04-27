@@ -1,0 +1,5 @@
+#!/bin/sh
+
+DIR=$HOME/quote
+$DIR/stock_quote.py
+DISPLAY=:0.0 feh --bg-max $DIR/out.jpg

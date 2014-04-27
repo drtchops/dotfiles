@@ -1,0 +1,33 @@
+#!/bin/sh
+
+usage() {
+    echo wifi list
+    echo wifi up ssid [key]
+    echo wifi down
+}
+
+CMD=$1
+SSID=$2
+KEY=$3
+INTERFACE=eth0
+
+if [ "$CMD" = "list" ]; then
+    sudo ifconfig $INTERFACE up
+    sudo iwlist $INTERFACE scan
+elif [ "$CMD" = "up" ]; then
+    sudo ifconfig $INTERFACE up
+    sudo iw dev $INTERFACE disconnect
+    if [ -z "$KEY" ]; then
+        # sudo iwconfig $INTERFACE essid "$SSID"
+        sudo iw dev $INTERFACE connect -w "$SSID"
+    else
+        sudo iwconfig $INTERFACE essid "$SSID" key "$KEY"
+    fi
+    sudo dhclient $INTERFACE
+elif [ "$CMD" = "down" ]; then
+    sudo iw dev $INTERFACE disconnect
+    sudo ifconfig $INTERFACE down
+else
+    usage
+    exit 1
+fi
