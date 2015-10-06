@@ -1,0 +1,56 @@
+[global]
+font = "DejaVu Sans Mono 14"
+allow_markup = yes
+format = "<b>%s %p</b>\n%b"
+sort = yes
+indicate_hidden = true
+# geometry = "x5"
+idle_threshold = 0
+geometry = "500x10-20+40"
+alignment = left
+show_age_threshold = 60
+sticky_history = yes
+follow = none
+word_wrap = yes
+separator_height = 2
+padding = 10
+horizontal_padding = 10
+separator_color = frame
+startup_notification = false
+dmenu = "/usr/bin/dmenu -p dunst: -nb #FAFAFA -nf #333333 -sb #71BEE3 -sf #333333"
+browser = x-www-browser
+
+[frame]
+width = 3
+color = "#333333"
+
+[shortcuts]
+close = ctrl+space
+close_all = ctrl+shift+space
+history = ctrl+grave
+context = ctrl+shift+period
+
+[urgency_low]
+background = "#FAFAFA"
+foreground = "#333333"
+timeout = 15
+
+[urgency_normal]
+background = "#FFDB60"
+foreground = "#333333"
+timeout = 30
+
+[urgency_critical]
+background = "#EF565C"
+foreground = "#333333"
+timeout = 0
+
+[Pidgin]
+appname = Pidgin
+urgency = critical
+background = "#BB88DD"
+
+[HipChat]
+appname = HipChat
+urgency = critical
+background = "#1292D0"
