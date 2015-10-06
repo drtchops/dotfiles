@@ -1,0 +1,67 @@
+set nocompatible               " be iMproved
+filetype off                   " required!
+
+execute pathogen#infect()
+filetype plugin indent on     " required!
+
+" Nice statusbar
+set laststatus=2
+set statusline=
+set statusline+=%f\                    " file name
+set statusline+=%h%1*%m%r%w%0*         " flags
+set statusline+=%=                     " right align
+set statusline+=%-14.(%l,%c%V%)\ %<%P  " offset
+" GIT
+" Add branch to statusline
+set statusline+=%{fugitive#statusline()}
+
+" colours
+set t_Co=256
+set term=xterm-256color
+syntax on
+colorscheme chango
+set background=light
+
+" settings
+set sw=4
+set ts=4
+set autoindent
+set expandtab
+set smarttab
+set ruler
+set cursorline
+set colorcolumn=80
+set mouse=a
+set backspace=indent,eol,start
+set whichwrap+=<,>,h,l
+set number
+set cmdheight=2
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
+set magic
+set showmatch
+set mat=2
+set history=1000
+set autoread
+
+" No annoying sound on errors
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+" Use Unix as the standard file type
+set ffs=unix,dos,mac
+set encoding=utf8
+" Turn backup off, since most stuff is in SVN, git et.c anyway...
+set nobackup
+set nowb
+set noswapfile
+
+" keys
+let mapleader = ","
+let g:mapleader = ","
+map <C-c> "+y
+map <C-v> "+p
+nmap <leader>w :w!<cr>
