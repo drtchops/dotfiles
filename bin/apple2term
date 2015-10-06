@@ -1,0 +1,3 @@
+#!/bin/sh
+
+/usr/lib/xscreensaver/apple2 -text -fast -program zsh

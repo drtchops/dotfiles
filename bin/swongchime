@@ -1,0 +1,18 @@
+#!/bin/bash
+
+espeak swong
+espeak -p 17 swong
+espeak -p 34 swong
+espeak -p 0 swong
+sleep 1
+espeak -p 0 swong
+espeak swong
+espeak -p 85 swong
+espeak -p 68 swong
+
+hour=$(date +%I)
+i=1
+while [ $i -le $hour ]; do
+    espeak -s 3 swong
+    let i+=1
+done

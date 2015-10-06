@@ -31,8 +31,10 @@
 !!!!!!!!! urxvt
 
 !! looks
-URxvt.font: -*-terminus-medium-r-normal-*-*-140-*-*-*-*-iso8859-1
-URxvt.boldFont: -*-terminus-medium-r-normal-*-*-140-*-*-*-*-iso8859-1
+!!URxvt.font: -*-terminus-medium-r-normal-*-*-140-*-*-*-*-iso8859-1
+!!URxvt.boldFont: -*-terminus-medium-r-normal-*-*-140-*-*-*-*-iso8859-1
+URxvt.font: xft:DejaVu Sans Mono:size=14
+URxvt.boldFont: xft:DejaVu Sans Mono:bold:size=14
 URxvt.depth: 32
 URxvt.scrollBar: false
 URxvt.scrollstyle: plain

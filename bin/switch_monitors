@@ -11,13 +11,13 @@ monitors=$(/usr/bin/xrandr -d :0 -q | grep ' connected' | wc -l)
 
 if [[ "$selection" == "2" || ( -z "$selection" && "$monitors" == "2" ) ]]; then
     echo 'laptop + monitor' >> $log
-    /usr/bin/xrandr -d :0 --output eDP1 --auto --pos 0x540 --output DP1 --auto --pos 1440x0 &>> $log
+    /usr/bin/xrandr -d :0 --dpi 184 --output eDP1 --auto --output DP1 --auto --pos 2560x0 &>> $log
 elif [[ "$selection" == "1" ]]; then
     echo 'just monitor' >> $log
-    /usr/bin/xrandr -d :0 --output eDP1 --off --output DP1 --auto &>> $log
+    /usr/bin/xrandr -d :0 --dpi 96 --output eDP1 --off --output DP1 --auto &>> $log
 else
     echo 'just laptop' >> $log
-    /usr/bin/xrandr -d :0 --output eDP1 --auto --output DP1 --off &>> $log
+    /usr/bin/xrandr -d :0 --dpi 184 --output eDP1 --auto --output DP1 --off &>> $log
 fi
 
 eval $(cat $root/.fehbg) &>> $log

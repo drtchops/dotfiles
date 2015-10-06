@@ -8,7 +8,16 @@ class Py3status:
             Get the cpu usage and temperature
         '''
         usage = int(round(psutil.cpu_percent()))
-        temp = int(open('/sys/devices/platform/coretemp.0/temp1_input').read().strip()) / 1000
+
+        path = '/sys/devices/platform/coretemp.0/hwmon/hwmon%s/temp1_input'
+        for i in xrange(1, 3):
+            try:
+                temp = int(open(path % i).read().strip()) / 1000
+            except:
+                temp = -1
+            else:
+                break
+
         return (
             0,
             {

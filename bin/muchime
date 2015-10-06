@@ -1,8 +1,0 @@
-#!/bin/bash
-
-hour=$(date +%I)
-i=1
-while [ $i -le $hour ]; do
-    /usr/bin/paplay /home/ian/Downloads/mu4.aif
-    let i+=1
-done

@@ -5,7 +5,7 @@ class Py3status:
     def volume(self, json, config):
         pac = Popen(['pacmd', 'list-sinks'], stdout=PIPE)
         grep = Popen(['grep', '-A', '15', '* index'], stdin=pac.stdout, stdout=PIPE)
-        awk = Popen(['awk', '/volume: 0:/{print $3}'], stdin=grep.stdout, stdout=PIPE)
+        awk = Popen(['awk', '/volume: front-left:/{print $5}'], stdin=grep.stdout, stdout=PIPE)
         vol = awk.communicate()[0].strip()
 
         pac = Popen(['pacmd', 'list-sinks'], stdout=PIPE)

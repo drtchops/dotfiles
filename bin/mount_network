@@ -6,8 +6,8 @@ if [ "$1" == "-u" ]; then
     sudo umount /media/serenity/e_drive
     sudo umount /media/serenity/f_drive
 else
-    sudo mount -t cifs -o credentials=/home/ian/.smbcredentials,iocharset=utf8,file_mode=0777,dir_mode=0777 //serenity.local/C$ /media/serenity/c_drive
-    sudo mount -t cifs -o credentials=/home/ian/.smbcredentials,iocharset=utf8,file_mode=0777,dir_mode=0777 //serenity.local/D$ /media/serenity/d_drive
-    sudo mount -t cifs -o credentials=/home/ian/.smbcredentials,iocharset=utf8,file_mode=0777,dir_mode=0777 //serenity.local/E$ /media/serenity/e_drive
-    sudo mount -t cifs -o credentials=/home/ian/.smbcredentials,iocharset=utf8,file_mode=0777,dir_mode=0777 //serenity.local/F$ /media/serenity/f_drive
+    sudo mount -t cifs -o credentials=/home/ian/.smbcredentials,iocharset=utf8,file_mode=0777,dir_mode=0777,sec=ntlmssp //serenity.local/C /media/serenity/c_drive
+    sudo mount -t cifs -o credentials=/home/ian/.smbcredentials,iocharset=utf8,file_mode=0777,dir_mode=0777,sec=ntlmssp //serenity.local/D /media/serenity/d_drive
+    sudo mount -t cifs -o credentials=/home/ian/.smbcredentials,iocharset=utf8,file_mode=0777,dir_mode=0777,sec=ntlmssp //serenity.local/E /media/serenity/e_drive
+    sudo mount -t cifs -o credentials=/home/ian/.smbcredentials,iocharset=utf8,file_mode=0777,dir_mode=0777,sec=ntlmssp //serenity.local/F /media/serenity/f_drive
 fi
